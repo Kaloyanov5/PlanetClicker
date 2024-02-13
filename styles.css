@@ -1,0 +1,344 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-image: url(./images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.game{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#game-saved{
+    display: none;
+    position: absolute;
+    top: 10px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    border: 4px solid orange;
+    z-index: 12;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#clicked-amount{
+    position: absolute;
+    top: 21%;
+    z-index: 10;
+    padding: 10px 50px;
+    font-size: 2rem;
+    color: white;
+}
+
+#clicks, #per-second{
+    font-weight: bold;
+}
+
+.perSecond{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#solar-system{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120vh;
+    height: 100vh;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in;
+}
+
+
+.sun-div{
+    width: 270px;
+    height: 270px;
+    transition: transform 0.15s ease-in;
+    z-index: 9;
+    border-radius: 50%;
+}
+
+.sun-div:active{
+    transform: scale(0.9);
+}
+
+#sun{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    background-image: url(./images/sun.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    animation: rotation 40s infinite linear;
+}
+
+#MercuryOrbit {
+	height: 400px;
+	width: 400px;
+	position: absolute;
+	z-index: 4;
+	top: 64.3%;
+	left: 41.4%;
+	margin-top: -300px;
+	margin-left: -250px;	
+	border-radius: 100%;
+	animation: rotation 23.6s linear infinite;
+}
+
+#mercury {
+    display: none;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 40px;
+	width: 40px;
+	margin-top: -40px;	
+	animation: rotation 12s linear infinite;
+}
+
+#VenusOrbit {
+	height: 500px;
+	width: 550px;
+	position: absolute;
+	z-index: 5;
+	top: 57%;
+	left: 36.2%;
+	margin-top: -300px;
+	margin-left: -250px;	
+	border-radius: 100%;
+	animation: rotation 59s linear infinite;
+}
+
+#venus {
+    display: none;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 50px;
+	width: 50px;
+	margin-top: -40px;	
+	animation: rotation 31s linear infinite;
+}
+
+#EarthOrbit {
+	height: 600px;
+	width: 700px;
+	position: absolute;
+	z-index: 5;
+	top: 51%;
+	left: 31%;
+	margin-top: -300px;
+	margin-left: -250px;	
+	border-radius: 100%;
+	animation: rotation 147.5s linear infinite;
+}
+
+#earth {
+    display: none;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	height: 50px;
+	width: 50px;
+	margin-top: -40px;	
+	animation: rotation 77.5s linear infinite;
+}
+
+#MoonOrbit {
+	height: 80px;
+	width: 80px;
+	position: absolute;
+	z-index: 4;
+	top: 51%;
+	left: -15px;
+	margin-top: -60px;
+	border-radius: 100%;
+	animation: rotation 12s linear infinite reverse;
+}
+
+#moon {
+    display: none;
+	height: 10px;
+	width: 10px;
+	background: radial-gradient(#DDD, #888);
+	border-radius: 100%;	
+}
+
+/* .orbit{
+    border: 0.1px solid darkgrey;
+} */
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+
+.shop{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-left: 5px solid orange;
+    width: 30vw;
+    height: 100vh;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+#upgrades{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3px;
+    background-color: brown;
+    border: 3px solid brown;
+    color: white;
+    width: 100%;
+}
+
+.upgrade-blocks{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+}
+
+.upgrade-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border: none;
+    background-color: gray;
+    padding: 10px;
+}
+
+.planet-upgrade-div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.upgrade-info{
+    margin: 0 auto;
+}
+
+.upgrade-planet-icon{
+    width: 60px;
+    max-width: 60px;
+    height: 60px;
+    max-height: 60px;
+}
+
+.upgrade-clicks-icon{
+    width: 50px;
+    max-width: 50px;
+    height: 50px;
+    max-height: 50px;
+}
+
+#reset-btn{
+    background-color: red;
+    color: white;
+}
+
+#reset-btn:hover{
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+#save-btn{
+    background-color: white;
+    color: black;
+}
+
+#save-btn:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.sr-btn{
+    border: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#confirm-reset-dialog {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 15px 20px;
+    margin: 10px auto;
+    border-radius: 15px;
+    border: 4px solid orange;
+}
+  
+.confirm-reset-dialog-btn-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+  
+.discard-message-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.btn{
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+#cancel-btn{
+    background-color: white;
+    color: black;
+}
+
+#confirm-btn{
+    background-color: red;
+    color: white;
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./styles.css">
+        <title>Solar Planet Clicker</title>
+    </head>
+
+    <body>
+        <div class="game">  
+            <div id="game-saved">
+                <p>Game Saved!</p>
+            </div>
+
+            <div id="clicked-amount">
+                <p><span id="clicks"></span> Solar Energy</p>
+                <p class="perSecond">per second <span id="per-second"></span></p>
+            </div>
+            <div id="solar-system">
+                <div class="sun-div">
+                    <button type="button" id="sun"></button>
+                </div>
+
+                <div id="MercuryOrbit" class="orbit">
+                    <img id="mercury" src="./images/mercury.png" alt="Rotating Mercury">
+                </div>
+
+                <div id="VenusOrbit" class="orbit">
+                    <img id="venus" src="./images/venus.png" alt="Rotating Venus">
+                </div>
+
+                <div id="EarthOrbit" class="orbit">
+                    <img id="earth" src="./images/earth.png" alt="Rotating Earth">
+                    <div id="MoonOrbit" class="orbit">
+                        <img id="moon" src="./images/moon.png" alt="Orbiting Moon">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="shop">
+            <h1>Store</h1>
+
+            <div id="upgrades">
+                <div id="click-multiplier" class="upgrade-blocks">
+                    <button type="button" id="multiplies-per-click" class="upgrade-button">
+                        <img src="./images/pointer.png" class="upgrade-clicks-icon" alt="Pointer">
+
+                        <div class="upgrade-info">
+                            <h2>Pointer</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div id="mercury-upgrade" class="upgrade-blocks">
+                    <button type="button" id="buy-mercury" class="upgrade-button">
+                        <div id="planet-mercury" class="planet-upgrade-div">
+                            <img src="./images/mercury.png" class="upgrade-planet-icon" alt="Mercury">
+
+                            <div class="upgrade-info">
+                                <h2>Mercury</h2>
+                                <p>Cost: <span id="mercury-cost"></span> SE</p>
+                                <p>SE/sec: <span id="mercury-se-per-second"></span></p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <div id="venus-upgrade" class="upgrade-blocks">
+                    <button type="button" id="buy-venus" class="upgrade-button">
+                        <div id="planet-venus" class="planet-upgrade-div">
+                            <img src="./images/venus.png" class="upgrade-planet-icon" alt="Venus">
+
+                            <div class="upgrade-info">
+                                <h2>Venus</h2>
+                                <p>Cost: <span id="venus-cost"></span> SE</p>
+                                <p>SE/sec: <span id="venus-se-per-second"></span></p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <div id="earth-upgrade" class="upgrade-blocks">
+                    <button type="button" id="buy-earth" class="upgrade-button">
+                        <div id="planet-earth" class="planet-upgrade-div">
+                            <img src="./images/earth.png" class="upgrade-planet-icon" alt="Earth">
+
+                            <div class="upgrade-info">
+                                <h2>Earth</h2>
+                                <p>Cost: <span id="earth-cost"></span> SE</p>
+                                <p>SE/sec: <span id="earth-se-per-second"></span></p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <div id="moon-upgrade" class="upgrade-blocks">
+                    <button type="button" id="buy-moon" class="upgrade-button">
+                        <div id="planet-moon" class="planet-upgrade-div">
+                            <img src="./images/moon.png" class="upgrade-planet-icon" alt="Moon">
+
+                            <div class="upgrade-info">
+                                <h2>Moon</h2>
+                                <p>Cost: <span id="moon-cost"></span> SE</p>
+                                <p>SE/sec: <span id="moon-se-per-second"></span></p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div id="save-div">
+                <button type="button" id="save-btn" class="sr-btn">Save</button>
+            </div>
+
+            <div id="reset-div">
+                <button type="button" id="reset-btn" class="sr-btn">Reset Stats</button>
+            </div>
+
+            <dialog id="confirm-reset-dialog">
+                <form method="dialog">
+                  <p class="discard-message-text">Your progress will be lost. Are you sure?</p>
+                  <div class="confirm-reset-dialog-btn-container">
+                    <button id="cancel-btn" class="btn">
+                      Cancel
+                    </button>
+                    <button id="confirm-btn" class="btn">
+                      Confirm
+                    </button>
+                  </div>
+                </form>
+            </dialog>
+        </div>
+
+        <script src="./scripts.js"></script>
+    </body>
+</html>
